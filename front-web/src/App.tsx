@@ -1,15 +1,9 @@
 import './App.css';
-import Home from './Home/Index';
-import Navbar from './Navbar/Index';
+import Routes from './Routes';
 
 function App() {
     return (
-        <>
-            <div>
-                <Navbar />
-                <Home />
-            </div>
-        </>
+        <Routes />
     );
 }
 
