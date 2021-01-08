@@ -13,12 +13,12 @@ import br.com.brlima.dsdeliver.service.dto.ProductDTO;
 @Service
 public class ProductService {
 
-	@Autowired
-	private ProductRepository repository;
+    @Autowired
+    private ProductRepository repository;
 
-	@Transactional(readOnly = true)
-	public List<ProductDTO> findAll() {
-		var result = repository.findAllByOrderByName();
-		return result.stream().map(ProductDTO::new).collect(Collectors.toList());
-	}
+    @Transactional(readOnly = true)
+    public List<ProductDTO> findAll() {
+        var result = repository.findAllByOrderByName();
+        return result.stream().map(ProductDTO::new).collect(Collectors.toList());
+    }
 }

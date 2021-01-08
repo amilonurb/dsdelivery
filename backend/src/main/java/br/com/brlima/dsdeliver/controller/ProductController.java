@@ -15,12 +15,12 @@ import br.com.brlima.dsdeliver.service.dto.ProductDTO;
 @RequestMapping(value = "/products")
 public class ProductController {
 
-	@Autowired
-	private ProductService service;
+    @Autowired
+    private ProductService service;
 
-	@GetMapping
-	public ResponseEntity<List<ProductDTO>> findAll() {
-		var result = service.findAll();
-		return ResponseEntity.ok(result);
-	}
+    @GetMapping
+    public ResponseEntity<List<ProductDTO>> findAll() {
+        var result = service.findAll();
+        return ResponseEntity.ok(result);
+    }
 }
