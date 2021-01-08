@@ -1,4 +1,4 @@
-package br.com.brlima.dsdeliver;
+package br.com.brlima.dsdelivery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

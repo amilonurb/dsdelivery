@@ -1,37 +1,37 @@
-package br.com.brlima.dsdeliver.service.dto;
+package br.com.brlima.dsdelivery.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import br.com.brlima.dsdeliver.entity.Product;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class ProductDTO implements Serializable {
+@Entity
+@Table(name = "tb_product")
+public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private BigDecimal price;
     private String description;
     private String imageUri;
 
-    public ProductDTO() {
+    public Product() {
     }
 
-    public ProductDTO(Long id, String name, BigDecimal price, String description, String imageUri) {
+    public Product(Long id, String name, BigDecimal price, String description, String imageUri) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.imageUri = imageUri;
-    }
-
-    public ProductDTO(Product product) {
-        this.id = product.getId();
-        this.name = product.getName();
-        this.price = product.getPrice();
-        this.description = product.getDescription();
-        this.imageUri = product.getImageUri();
     }
 
     public Long getId() {
@@ -72,5 +72,30 @@ public class ProductDTO implements Serializable {
 
     public void setImageUri(String imageUri) {
         this.imageUri = imageUri;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Product other = (Product) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package br.com.brlima.dsdeliver.config;
+package br.com.brlima.dsdelivery.config;
 
 import java.util.Arrays;
 

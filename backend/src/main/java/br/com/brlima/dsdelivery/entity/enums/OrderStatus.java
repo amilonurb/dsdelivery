@@ -1,4 +1,4 @@
-package br.com.brlima.dsdeliver.entity.enums;
+package br.com.brlima.dsdelivery.entity.enums;
 
 public enum OrderStatus {
     PENDING, DELIVERED

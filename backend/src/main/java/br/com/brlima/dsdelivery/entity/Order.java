@@ -1,4 +1,4 @@
-package br.com.brlima.dsdeliver.entity;
+package br.com.brlima.dsdelivery.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -15,7 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import br.com.brlima.dsdeliver.entity.enums.OrderStatus;
+import br.com.brlima.dsdelivery.entity.enums.OrderStatus;
 
 @Entity
 @Table(name = "tb_order")

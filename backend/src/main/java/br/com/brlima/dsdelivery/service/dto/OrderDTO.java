@@ -1,4 +1,4 @@
-package br.com.brlima.dsdeliver.service.dto;
+package br.com.brlima.dsdelivery.service.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.brlima.dsdeliver.entity.Order;
-import br.com.brlima.dsdeliver.entity.enums.OrderStatus;
+import br.com.brlima.dsdelivery.entity.Order;
+import br.com.brlima.dsdelivery.entity.enums.OrderStatus;
 
 public class OrderDTO implements Serializable {
 

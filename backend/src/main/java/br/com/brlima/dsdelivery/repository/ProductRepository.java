@@ -1,10 +1,10 @@
-package br.com.brlima.dsdeliver.repository;
+package br.com.brlima.dsdelivery.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.brlima.dsdeliver.entity.Product;
+import br.com.brlima.dsdelivery.entity.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
