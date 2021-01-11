@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
-export default function App() {
+export default function Home() {
 
     const handleOnPress = () => {
 
