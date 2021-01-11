@@ -31,7 +31,7 @@ public class OrderService {
 
     @Transactional
     public OrderDTO insert(OrderDTO dto) {
-        final var order = new Order(null, dto.getAddress(), dto.getLatitude(), dto.getLongitude(), Instant.now(), OrderStatus.PENDING, null);
+        final var order = new Order(null, dto.getAddress(), dto.getLatitude(), dto.getLongitude(), Instant.now(), OrderStatus.PENDING);
 
         dto.getProducts().forEach(p -> {
             var product = productRepository.getOne(p.getId());

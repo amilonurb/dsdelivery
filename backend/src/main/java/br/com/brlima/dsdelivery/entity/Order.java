@@ -31,7 +31,6 @@ public class Order implements Serializable {
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
-    private BigDecimal total;
 
     @ManyToMany
     @JoinTable(name = "tb_order_product", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
@@ -40,14 +39,13 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status, BigDecimal total) {
+    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
         this.id = id;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.moment = moment;
         this.status = status;
-        this.total = total;
     }
 
     public Long getId() {
@@ -98,16 +96,12 @@ public class Order implements Serializable {
         this.status = status;
     }
 
-    public BigDecimal getTotal() {
-        return total;
-    }
-
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
-
     public Set<Product> getProducts() {
         return products;
+    }
+
+    public BigDecimal getTotal() {
+        return this.products.stream().map(Product::getPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override
